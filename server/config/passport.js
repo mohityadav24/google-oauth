@@ -15,7 +15,7 @@ passport.use(
     async (accessToken, refreshToken, profile, done) => {
       try {
         let user = await User.findOne({ googleId: profile.id });
-console.log("test google token ",refreshToken);
+
 
         if (!user) {
           user = await User.create({
